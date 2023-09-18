@@ -1,0 +1,78 @@
+---
+# Project information
+site_name: REPLACEME Wiki
+site_url: https://REPLACEME.rocky.page
+site_description: >-
+  REPLACEME
+
+# Repository
+repo_url: https://git.resf.org/REPLACEME/wiki
+repo_name: REPLACEME/wiki
+edit_uri: _edit/main/docs/
+
+# Copyright
+copyright: Copyright &copy; 2023 Rocky Enterprise Software Foundation
+
+# Configuration
+theme:
+  name: material
+  logo: assets/icon-white.svg
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  highlightjs: true
+  hljs_languages:
+    - bash
+    - perl
+    - python
+    - yaml
+  features:
+    - navigation.expand
+    - navigation.indexes
+    - navigation.instant
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - navigation.path
+    - search.highlight
+    - search.suggest
+    - toc.integrate
+    - content.action.edit
+
+# Plugins
+plugins:
+  - autolinks
+  - awesome-pages
+  - git-revision-date-localized:
+      type: date
+  - search
+
+# Extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - pymdownx.details # this allows collapsible attributions
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true

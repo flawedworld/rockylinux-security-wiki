@@ -1,0 +1,41 @@
+---
+name: mkdocs build
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: docker.io/rockylinux:9
+    steps:
+      - name: Install deps
+        run: dnf -y install git python3 python3-pip
+
+      - name: setup ssh
+        env:
+          SSH_KEY: "${{ secrets.SSH_KEY }}"
+        run: |
+          mkdir -p  ~/.ssh/
+          echo "$SSH_KEY" > ~/.ssh/id_rsa
+          chmod 0700 ~/.ssh/
+          chmod 0600 ~/.ssh/id_rsa
+
+      - name: checkout
+        env:
+          GIT_SSH_COMMAND: "ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
+        run:
+          git clone https://git.resf.org/$GITHUB_REPOSITORY.git $GITHUB_WORKSPACE
+
+      - name: Install python requirements
+        run: python3 -m pip install -r requirements.txt
+      
+      - name: Deploy
+        env: 
+          GIT_SSH_COMMAND: "ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
+          GIT_AUTHOR_NAME: "Rocky Bot"
+          GIT_AUTHOR_EMAIL: "auto@rockylinux.org"
+        run: |
+          git remote set-url origin ssh://git@git.resf.org:22220/$GITHUB_REPOSITORY.git
+          python3 -m mkdocs gh-deploy --force
