@@ -1,7 +1,7 @@
-# REPLACEME Wiki
+# SIG/Security Wiki
 
-@TODO - fill in :)
+The wiki for the Rocky Linux Security Special Interest Group
 
 ## Continuous Integration / Continuous Deployment
 
-Actions Runner executes workflow to publish to https://REPLACEME.rocky.page on push to main.
+Actions Runner executes workflow to publish to https://sig-security.rocky.page on push to main.

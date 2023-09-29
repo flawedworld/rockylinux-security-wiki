@@ -1,4 +1,4 @@
-# REPLACEME Wiki
+# SIG/Security Wiki
 
 ## Links
 

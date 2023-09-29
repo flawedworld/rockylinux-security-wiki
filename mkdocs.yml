@@ -1,13 +1,13 @@
 ---
 # Project information
-site_name: REPLACEME Wiki
-site_url: https://REPLACEME.rocky.page
+site_name: SIG/Security Wiki
+site_url: https://sig-security.rocky.page
 site_description: >-
-  REPLACEME
+  The wiki for the Rocky Linux Security Special Interest Group
 
 # Repository
-repo_url: https://git.resf.org/REPLACEME/wiki
-repo_name: REPLACEME/wiki
+repo_url: https://git.resf.org/security/wiki
+repo_name: security/wiki
 edit_uri: _edit/main/docs/
 
 # Copyright
