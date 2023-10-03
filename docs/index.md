@@ -1,6 +1,6 @@
 # SIG/Security Wiki
 
-The Security SIG repositories provide extra security-related packages and security-hardened override packages (replacing those from the main distribution) for Rocky Linux and other EL distributions.
+The Security SIG repositories provide extra security-related packages and security-hardened override packages (replacing those from the main distribution) for Rocky Linux and other Enterprise Linux (EL) distributions.
 
 ## Responsibilities
 
@@ -21,11 +21,16 @@ dnf install rocky-release-security
 
 ### Override packages (currently only for EL9)
 
-- glibc (adds many security-hardening changes originating from Owl and ALT Linux on top of EL package)
+- glibc (adds many security-hardening changes originating from Owl and ALT Linux on top of EL package, fixes [CVE-2023-4527](https://www.openwall.com/lists/oss-security/2023/09/25/1))
 - openssh (fewer shared libraries exposed in sshd processes while otherwise fully matching EL package's functionality)
 
 The changes are described in more detail in the package changelogs.
+The inclusion of additional security fixes will be "reverted" if and when those get included in upstream EL packages that we rebase our changes on.
 More packages/changes are planned, including override packages also for EL8.
+
+## Source code
+
+Just like for other Rocky Linux SIGs, the source trees for Security SIG packages are maintained in [per-package git repositories](https://git.rockylinux.org/sig/security/src). Each repository contains branches `r8` and/or `r9` corresponding to target EL version.
 
 ## Contributing
 
