@@ -8,9 +8,29 @@ Developing and maintaining various security related packages that are not in ups
 
 ## Repo Installation
 
+### On Rocky Linux
+
 ```
 dnf install rocky-release-security
 ```
+
+### On another compatible EL distro
+
+1. Download the release package containing our repository configuration file and package signing public key. Use the version that corresponds to the major version of your EL distro.
+
+- [rocky-release-security-9](https://download.rockylinux.org/pub/rocky/9/extras/x86_64/os/Packages/r/rocky-release-security-9-2.el9.noarch.rpm)
+- [rocky-release-security-8](https://download.rockylinux.org/pub/rocky/8/extras/x86_64/os/Packages/r/rocky-release-security-8-2.el8.noarch.rpm)
+
+2. Verify the package file's SHA-256 digest with `sha256sum`. The currently expected digests are:
+
+```
+8daf0934c8b5cfce1f5c2dc53ea0118102940bf307c7cc8863ab718696863da6  rocky-release-security-9-2.el9.noarch.rpm
+15aebef7257d4ff3c59a3b4e45acf8fae9894a10ddd2c924dfd521033337e96c  rocky-release-security-8-2.el8.noarch.rpm
+```
+
+This isn't as secure as checking the package signature would be _if_ you previously had our package signing public key, but on another distro you probably don't have that yet, so checking the digest against its copy obtained from this separate website is a best-effort measure.
+
+3. Install the package with `rpm -U --nodeps`. The `--nodeps` option is needed to bypass the dependency check on our `rocky-release` package. In essense, you're manually confirming to `rpm` that you're installing on a compatible distro.
 
 ## Packages
 
