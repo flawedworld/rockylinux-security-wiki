@@ -41,17 +41,11 @@ Install the package with `rpm -U --nodeps`. The `--nodeps` option is needed to b
 
 ### Override packages (currently only for EL9)
 
-- glibc (adds many security-hardening changes originating from Owl and ALT Linux on top of EL package)
-- openssh (fewer shared libraries exposed in sshd processes while otherwise fully matching EL package's functionality)
+- [glibc](packages/glibc.md) (adds many security-hardening changes originating from Owl and ALT Linux on top of EL package)
+- [openssh](packages/openssh.md) (fewer shared libraries exposed in sshd processes while otherwise fully matching EL package's functionality)
 
-The changes are described in more detail in the package changelogs.
+The changes are described in more detail on the per-package wiki pages linked above, as well as in the package changelogs.
 More packages/changes are planned, including override packages also for EL8.
-
-#### Known-effective vulnerability mitigations and fixes
-
-`glibc-2.34-60.el9_2.security.0.2` (specifically the `.0.2` version!) includes mitigations sufficient to avoid security exposure of [CVE-2023-4911](https://www.openwall.com/lists/oss-security/2023/10/03/2) and a backport of upstream glibc fix of [CVE-2023-4527](https://www.openwall.com/lists/oss-security/2023/09/25/1) that was not yet in upstream EL.
-
-The inclusion of additional security fixes will be "reverted" if and when those get included in upstream EL packages that we rebase our changes on.
 
 ## Source code
 
@@ -71,8 +65,10 @@ We hang out in our [Security Mattermost channel](https://chat.rockylinux.org/roc
 
 Some of the people particularly active with setting up this SIG so far:
 
-| Name           | Mattermost Name |
-|----------------|-----------------|
-| Neil Hanlon    | @neil           |
-| Scott Shinn    | @atomicturtle   |
-| Solar Designer | @solardiz       |
+| Name            | Mattermost Name |
+|-----------------|-----------------|
+| Fredrik Nyström | @nscfreny       |
+| Louis Abel      | @label          |
+| Neil Hanlon     | @neil           |
+| Scott Shinn     | @atomicturtle   |
+| Solar Designer  | @solardiz       |
