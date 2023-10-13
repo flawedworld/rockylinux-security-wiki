@@ -16,12 +16,12 @@ dnf install rocky-release-security
 
 ### On another compatible EL distro
 
-1. Download the release package containing our repository configuration file and package signing public key. Use the version that corresponds to the major version of your EL distro.
+Download the release package containing our repository configuration file and package signing public key. Use the version that corresponds to the major version of your EL distro.
 
 - [rocky-release-security-9](https://download.rockylinux.org/pub/rocky/9/extras/x86_64/os/Packages/r/rocky-release-security-9-2.el9.noarch.rpm)
 - [rocky-release-security-8](https://download.rockylinux.org/pub/rocky/8/extras/x86_64/os/Packages/r/rocky-release-security-8-2.el8.noarch.rpm)
 
-2. Verify the package file's SHA-256 digest with `sha256sum`. The currently expected digests are:
+Verify the package file's SHA-256 digest with `sha256sum`. The currently expected digests are:
 
 ```
 8daf0934c8b5cfce1f5c2dc53ea0118102940bf307c7cc8863ab718696863da6  rocky-release-security-9-2.el9.noarch.rpm
@@ -30,7 +30,7 @@ dnf install rocky-release-security
 
 This isn't as secure as checking the package signature would be _if_ you previously had our package signing public key, but on another distro you probably don't have that yet, so checking the digest against its copy obtained from this separate website is a best-effort measure.
 
-3. Install the package with `rpm -U --nodeps`. The `--nodeps` option is needed to bypass the dependency check on our `rocky-release` package. In essense, you're manually confirming to `rpm` that you're installing on a compatible distro.
+Install the package with `rpm -U --nodeps`. The `--nodeps` option is needed to bypass the dependency check on our `rocky-release` package. In essense, you're manually confirming to `rpm` that you're installing on a compatible distro.
 
 ## Packages
 
