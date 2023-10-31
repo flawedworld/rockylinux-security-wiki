@@ -39,6 +39,10 @@ Install the package with `rpm -U --nodeps`. The `--nodeps` option is needed to b
 - [lkrg](https://lkrg.org) (Linux Kernel Runtime Guard)
 - [passwdqc](https://www.openwall.com/passwdqc/) (Password/passphrase strength checking and policy enforcement)
 
+### Extra packages (currently only for EL9)
+
+- [hardened_malloc](https://github.com/GrapheneOS/hardened_malloc) (Security-focused memory allocator providing the malloc API, and a script to preload it into existing program binaries)
+
 ### Override packages (currently only for EL9)
 
 - [glibc](packages/glibc.md) (adds many security-hardening changes originating from Owl and ALT Linux on top of EL package)
@@ -63,12 +67,14 @@ We hang out in our [Security Mattermost channel](https://chat.rockylinux.org/roc
 
 ## Members
 
-Some of the people particularly active with setting up this SIG so far:
+Some of the people active with setting up this SIG so far:
 
 | Name            | Mattermost Name |
 |-----------------|-----------------|
+|                 | @flawedworld    |
 | Fredrik Nyström | @nscfreny       |
 | Louis Abel      | @label          |
+| Mustafa         | @mustafa        |
 | Neil Hanlon     | @neil           |
 | Scott Shinn     | @atomicturtle   |
 | Solar Designer  | @solardiz       |
